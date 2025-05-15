@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Core", "Sandbox.Core\Sandbox.Core.csproj", "{7DCBDBE9-DCDB-4A1F-A4E8-27B7357796AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Web", "Sandbox.Web\Sandbox.Web.csproj", "{F1ED07BA-7E43-4087-B0EF-58E92B4FBC12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Windows", "Sandbox.Windows\Sandbox.Windows.csproj", "{7AF8CC0E-C585-4A4B-A6FB-45EAB3AFBA12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DCBDBE9-DCDB-4A1F-A4E8-27B7357796AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCBDBE9-DCDB-4A1F-A4E8-27B7357796AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCBDBE9-DCDB-4A1F-A4E8-27B7357796AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCBDBE9-DCDB-4A1F-A4E8-27B7357796AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1ED07BA-7E43-4087-B0EF-58E92B4FBC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1ED07BA-7E43-4087-B0EF-58E92B4FBC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1ED07BA-7E43-4087-B0EF-58E92B4FBC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1ED07BA-7E43-4087-B0EF-58E92B4FBC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF8CC0E-C585-4A4B-A6FB-45EAB3AFBA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF8CC0E-C585-4A4B-A6FB-45EAB3AFBA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF8CC0E-C585-4A4B-A6FB-45EAB3AFBA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF8CC0E-C585-4A4B-A6FB-45EAB3AFBA12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

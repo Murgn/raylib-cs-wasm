@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+        <WasmMainJSPath>main.js</WasmMainJSPath>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <EnableAggressiveTrimming>true</EnableAggressiveTrimming>
+        <PublishTrimmed>true</PublishTrimmed>
+        <TrimMode>full</TrimMode>
+        <RunAOTCompilation>true</RunAOTCompilation>
+        <WasmBuildNative>true</WasmBuildNative>
+        <WasmNativeStrip>true</WasmNativeStrip>
+        <WasmAllowUndefinedSymbols>true</WasmAllowUndefinedSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sandbox.Core\Sandbox.Core.csproj" />
+      <PackageReference Include="Raylib-cs" Version="7.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <WasmExtraFilesToDeploy Include="index.html" />
+        <WasmExtraFilesToDeploy Include="main.js" />
+        <NativeFileReference Include="raylib.a" />
+        <WasmFilesToIncludeInFileSystem Include="..\Sandbox.Core\Resources\**\*.*" TargetPath="Resources\%(RecursiveDir)\%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <SupportedOSPlatform>browser</SupportedOSPlatform>
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition=" $(Configuration) == 'Release' ">
+            <PropertyGroup>
+                <EmccFlags>-s USE_GLFW=3 -O3 -lexports.js</EmccFlags>
+            </PropertyGroup>
+        </When>
+    </Choose>
+</Project>

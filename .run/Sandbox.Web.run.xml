@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Sandbox.Web" type="ShConfigurationType">
+    <option name="SCRIPT_TEXT" value="dotnet publish ./Sandbox.Web -c Release; if ($?) { dotnet serve --directory ./Sandbox.Web/bin/Release/net8.0/browser-wasm/AppBundle --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json }" />
+    <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+    <option name="SCRIPT_PATH" value="dotnet publish ./Sandbox.Web -c Release &amp;&amp; dotnet serve --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json --directory ./Sandbox.Web/bin/Release/net8.0/browser-wasm/AppBundle/" />
+    <option name="SCRIPT_OPTIONS" value="" />
+    <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+    <option name="INTERPRETER_PATH" value="powershell.exe" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="EXECUTE_IN_TERMINAL" value="true" />
+    <option name="EXECUTE_SCRIPT_FILE" value="false" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
