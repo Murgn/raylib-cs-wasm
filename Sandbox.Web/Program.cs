@@ -13,7 +13,7 @@ public partial class Program
     }
 
     [JSExport]
-    public static void GameLoop()
+    public static void MainLoop()
     {
         runtime.Update();
         runtime.Render();

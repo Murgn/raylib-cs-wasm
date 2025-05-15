@@ -1,6 +1,8 @@
 ﻿using Raylib_cs;
 using Sandbox.Core;
 
+namespace Sandbox.Windows;
+
 public static class Program
 {
     private static Runtime runtime;

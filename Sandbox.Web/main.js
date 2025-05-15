@@ -11,7 +11,7 @@ const GAME_WIDTH = canvas.width;
 const GAME_HEIGHT = canvas.height;
 
 function mainLoop() {
-    exports.Sandbox.Web.Program.GameLoop();
+    exports.Sandbox.Web.Program.MainLoop();
     window.requestAnimationFrame(mainLoop);
 }
 
