@@ -1,18 +1,25 @@
-﻿import { dotnet } from './_framework/dotnet.js'
-const { getAssemblyExports, getConfig } = await dotnet.withDiagnosticTracing(false).create();
+import { dotnet } from './_framework/dotnet.js'
+import { initImports } from './imports.js'
+
+const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
+    .withDiagnosticTracing(false)
+    .withApplicationArgumentsFromQuery()
+    .create();
+
+initImports(setModuleImports);
 
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
-var canvas = document.getElementById('canvas');
+let canvas = document.getElementById('canvas');
 dotnet.instance.Module['canvas'] = canvas;
 
 const GAME_WIDTH = canvas.width;
 const GAME_HEIGHT = canvas.height;
 
-function mainLoop() {
-    exports.Sandbox.Web.Program.MainLoop();
-    window.requestAnimationFrame(mainLoop);
+function main() {
+    exports.Web.Program.Update();
+    window.requestAnimationFrame(main);
 }
 
 function onResize() {
@@ -31,12 +38,12 @@ function onResize() {
     canvas.style.position = 'absolute';
     canvas.style.left = `${(windowWidth - newWidth) / 2}px`;
     canvas.style.top = `${(windowHeight - newHeight) / 2}px`;
-    exports.Sandbox.Web.Program.Resize(Math.round(newWidth), Math.round(newHeight));
+    exports.Web.Program.Resize(Math.round(newWidth), Math.round(newHeight));
 }
 
 window.addEventListener('resize', onResize);
 window.addEventListener('load', onResize);
 
 await dotnet.run();
-window.requestAnimationFrame(mainLoop);
+window.requestAnimationFrame(main);
 onResize();

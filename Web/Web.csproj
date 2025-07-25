@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>        
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>        
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Core\Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <WasmExtraFilesToDeploy Include="wwwroot\**\*.*" TargetPath=".\%(RecursiveDir)\%(Filename)%(Extension)" />
+        <WasmExtraFilesToDeploy Include="..\Sandbox.Core\Resources\**\*.*" TargetPath="Resources\%(RecursiveDir)\%(Filename)%(Extension)" />
+        <NativeFileReference Include="raylib.a" />
+    </ItemGroup>
+    
+    <Choose>
+        <When Condition=" $(Configuration) == 'Release' ">
+            <PropertyGroup>
+                <EmccFlags>-s USE_GLFW=3 -O3 -lexports.js</EmccFlags>
+                <EnableAggressiveTrimming>true</EnableAggressiveTrimming>
+                <PublishTrimmed>true</PublishTrimmed>
+                <TrimMode>full</TrimMode>
+                <RunAOTCompilation>true</RunAOTCompilation>
+                <WasmBuildNative>true</WasmBuildNative>
+                <WasmNativeStrip>true</WasmNativeStrip>
+                <WasmAllowUndefinedSymbols>true</WasmAllowUndefinedSymbols>
+            </PropertyGroup>
+        </When>
+        <When Condition=" $(Configuration) == 'Debug' ">
+            <PropertyGroup>
+                <EmccFlags>-s USE_GLFW=3 -O0 -lexports.js</EmccFlags>
+                <RunAOTCompilation>true</RunAOTCompilation>
+            </PropertyGroup>
+        </When>
+    </Choose>
+</Project>

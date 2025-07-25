@@ -1,6 +1,6 @@
 global using Raylib_cs;
 
-namespace Sandbox.Core;
+namespace Core;
 
 public class Runtime
 {
@@ -11,7 +11,7 @@ public class Runtime
 
     public void Update()
     {
-        
+
     }
 
     public void Render()
@@ -19,6 +19,7 @@ public class Runtime
         Raylib.BeginDrawing();
         Raylib.ClearBackground(Color.Red);
         Raylib.DrawText("Hello, world!", 12, 12, 20, Color.White);
+        Raylib.DrawFPS(12, 36);
         Raylib.EndDrawing();
     }
 
