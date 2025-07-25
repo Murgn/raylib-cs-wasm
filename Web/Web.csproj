@@ -14,7 +14,7 @@
 
     <ItemGroup>
         <WasmExtraFilesToDeploy Include="wwwroot\**\*.*" TargetPath=".\%(RecursiveDir)\%(Filename)%(Extension)" />
-        <WasmExtraFilesToDeploy Include="..\Sandbox.Core\Resources\**\*.*" TargetPath="Resources\%(RecursiveDir)\%(Filename)%(Extension)" />
+        <WasmFilesToIncludeInFileSystem Include="..\Core\Resources\**\*.*" TargetPath="Resources\%(RecursiveDir)\%(Filename)%(Extension)" />
         <NativeFileReference Include="raylib.a" />
     </ItemGroup>
     

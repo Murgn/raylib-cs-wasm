@@ -9,7 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Core\Core.csproj" />
+        <ProjectReference Include="..\Core\Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\Core\Resources\**\*.*" CopyToOutputDirectory="PreserveNewest" TargetPath="Resources\%(RecursiveDir)\%(Filename)%(Extension)" />
     </ItemGroup>
 
 </Project>

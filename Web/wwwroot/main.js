@@ -1,10 +1,12 @@
 import { dotnet } from './_framework/dotnet.js'
 import { initImports } from './imports.js'
 
-const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
+const dotnetInstance = await dotnet
     .withDiagnosticTracing(false)
     .withApplicationArgumentsFromQuery()
     .create();
+
+const { setModuleImports, getAssemblyExports, getConfig } = dotnetInstance;
 
 initImports(setModuleImports);
 
