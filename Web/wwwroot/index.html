@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>raylib-cs wasm</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="modulepreload" href="./main.js" />
+    <link rel="modulepreload" href="./_framework/dotnet.js" />
+  </head>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <body>
+    <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

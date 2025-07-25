@@ -1,7 +1,7 @@
 ﻿using Raylib_cs;
-using Sandbox.Core;
+using Core;
 
-namespace Sandbox.Windows;
+namespace Desktop;
 
 public static class Program
 {
