@@ -12,17 +12,17 @@ dotnet workload install wasm-tools
 ```
 
 ## Build + Run
-Run the `Sandbox.Web` configuration to build and run the project, or alternatively call the following commands from the root directory of your solution:
+Run the `Web Debug` or `Web Release` configuration to build and run the project, or alternatively call the following commands from the root directory of your solution:
 ```
-dotnet publish ./Sandbox.Web -c Release
+dotnet publish ./Web -c Release
 ```
 ```
-dotnet serve --directory ./Sandbox.Web/bin/Release/net8.0/browser-wasm/AppBundle --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json
+dotnet serve --directory ./Web/bin/Release/net8.0/browser-wasm/AppBundle --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json
 ```
 The output will include a link you can use to open your game in the browser.
 
 ## Notes
-The `Sandbox.Windows` configuration is also included to make local development easier and more accessible.
+The `Desktop` configuration is also included to make local development easier and more accessible.
 
 Feel free to clone this for any purpose! If you have suggestions or improvements, pull requests are always welcome! (｡•̀ᴗ-)✧
 
